@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DoubleLinkedList<T> {
 
-    private static class Node<T> {
+    protected static class Node<T> {
         public T value;
         public Node<T> next = null;
         public Node<T> previous = null;
@@ -20,9 +20,9 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    private Node<T> root = null;
-    private Node<T> tail = null;
-    private int size = 0;
+    protected Node<T> root = null;
+    protected Node<T> tail = null;
+    protected int size = 0;
 
     public DoubleLinkedList() {
 
@@ -158,7 +158,7 @@ public class DoubleLinkedList<T> {
         size = 0;
     }
 
-    private Node<T> getNode(int i) {
+    protected Node<T> getNode(int i) {
         if (i >= size || i < 0) throw new IndexOutOfBoundsException("Index Out Of Bounds");
 
         int i_ = i;

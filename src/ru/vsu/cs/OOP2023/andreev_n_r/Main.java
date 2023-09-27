@@ -1,10 +1,27 @@
 package ru.vsu.cs.OOP2023.andreev_n_r;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        DoubleLinkedList<Integer> list;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Выберете лист:");
+            System.out.println("1 - двухсвязный");
+            System.out.println("2 - циклический");
+
+            int k = scanner.nextInt();
+            if(k ==1){
+                list = new DoubleLinkedList<>();
+                break;
+            } else if(k == 2) {
+                list = new CycleLinkedList<>();
+                break;
+            }
+        }
+        // init
         for (int i = 0; i < 20; i++) {
             list.add(i);
         }
